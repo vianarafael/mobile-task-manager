@@ -19,7 +19,9 @@ export default function Profile() {
       <View style={{ ...padding(20), ...styles.subcontainer }}>
         <Text style={styles.text}>
           <Text>Daily</Text>
-          <Text class="active">Weekly</Text>
+          {"         "}
+          <Text>Weekly</Text>
+          {"         "}
           <Text>Monthly</Text>
         </Text>
       </View>
@@ -42,6 +44,8 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     backgroundColor: "hsl(246, 80%, 60%)",
     width: "87%",
+    borderTopRightRadius: 25,
+    borderTopLeftRadius: 25,
   },
   image: {
     height: 100,
@@ -52,9 +56,13 @@ const styles = StyleSheet.create({
   text: {
     color: "#fff",
     opacity: 0.7,
+    padding: 4,
   },
   subcontainer: {
     backgroundColor: "hsl(235, 46%, 20%)",
     width: "87%",
+    borderBottomLeftRadius: 25,
+    borderBottomRightRadius: 25,
+    alignItems: "center",
   },
 });
