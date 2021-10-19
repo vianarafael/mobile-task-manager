@@ -8,7 +8,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Profile />
-      <Activity activity="Work" />
+      <Activity activity="Work" color="hsl(15, 100%, 70%)" />
     </View>
   );
 }
