@@ -1,12 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import Activity from "./components/activity";
 import Profile from "./components/profile";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Profile />
+      <Activity />
     </View>
   );
 }

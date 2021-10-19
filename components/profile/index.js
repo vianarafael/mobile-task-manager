@@ -2,7 +2,12 @@ import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 export default function Profile() {
   return (
-    <>
+    <View
+      style={{
+        backgroundColor: "hsl(235, 46%, 20%)",
+        borderRadius: 25,
+      }}
+    >
       <View class="wrapper" style={{ ...padding(20), ...styles.container }}>
         <Image
           source={require("/Users/rafael/Projects/mobile/task-manager/rafa.jpeg")}
@@ -25,7 +30,7 @@ export default function Profile() {
           <Text>Monthly</Text>
         </Text>
       </View>
-    </>
+    </View>
   );
 }
 
@@ -44,8 +49,7 @@ const styles = StyleSheet.create({
     paddingTop: 20,
     backgroundColor: "hsl(246, 80%, 60%)",
     width: "87%",
-    borderTopRightRadius: 25,
-    borderTopLeftRadius: 25,
+    borderRadius: 25,
   },
   image: {
     height: 100,
@@ -59,7 +63,6 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   subcontainer: {
-    backgroundColor: "hsl(235, 46%, 20%)",
     width: "87%",
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
