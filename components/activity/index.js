@@ -1,11 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import { SvgUri } from "react-native-svg";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function Activity({ color, activity, data }) {
   return (
     <View style={{ backgroundColor: color, borderRadius: 25, marginTop: 20 }}>
-      <SvgUri width="100%" height="100%" uri={image} />
       <View style={styles.container}>
         <View>
           <Text style={{ color: "#fff" }}>{activity}</Text>
