@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "165006107797",
+    "project_id": "task-manager-e867b",
+    "storage_bucket": "task-manager-e867b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:165006107797:android:b8d13579807f0f1152279c",
+        "android_client_info": {
+          "package_name": "au.com.reactnativefirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "165006107797-6btrj3ei85ss3sha4svdva151so0397q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVJ_xKrjrLv2_pLJ4Mc5GpSJ1rr3lQz-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "165006107797-6btrj3ei85ss3sha4svdva151so0397q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
