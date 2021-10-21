@@ -1,11 +1,11 @@
 import React from "react";
 import { StyleSheet, Text, View, ScrollView, Button } from "react-native";
-import Activity from "./components/activity";
+import Activity from "../activity";
 
 import { useNavigation } from "@react-navigation/core";
 
-import Profile from "./components/profile";
-import Login from "./components/login";
+import Profile from "../profile";
+import Login from "../login";
 
 export default function Home() {
   const navigation = useNavigation();
@@ -21,13 +21,11 @@ export default function Home() {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text>Testing Firebase!!!</Text>
-        <Login />
-        {/* <Profile />
+        <Profile />
         <Activity activity="Work" color="hsl(15, 100%, 70%)" />
         <Activity activity="Study" color="hsl(195, 74%, 62%)" />
         <Activity activity="Personal Projects" color="hsl(145, 58%, 55%)" />
-        <Activity activity="Exercise" color="hsl(348, 100%, 68%)" /> */}
+        <Activity activity="Exercise" color="hsl(348, 100%, 68%)" />
       </View>
     </ScrollView>
   );
