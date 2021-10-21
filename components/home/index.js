@@ -3,9 +3,8 @@ import { StyleSheet, Text, View, ScrollView, Button } from "react-native";
 import Activity from "../activity";
 
 import { useNavigation } from "@react-navigation/core";
-
+import { auth } from "../../firebase";
 import Profile from "../profile";
-import Login from "../login";
 
 export default function Home() {
   const navigation = useNavigation();
@@ -14,12 +13,13 @@ export default function Home() {
     auth
       .signOut()
       .then(() => {
-        navigation.replace("Home");
+        navigation.replace("Login");
       })
       .catch((error) => alert(error.message));
   };
   return (
     <ScrollView>
+      <Button onPress={handleSignOut} title="Sign Out" />
       <View style={styles.container}>
         <Profile />
         <Activity activity="Work" color="hsl(15, 100%, 70%)" />
