@@ -8,21 +8,23 @@ export default function Activity({ color, activity, data }) {
     minutes: 0,
     hours: 0,
     timer: 0,
+    id: null,
   });
+  const [ID, setID] = React.useState(null);
 
   function add() {
-    setTimer({ ...timer, seconds: timer.seconds++ });
-    if (timer.seconds >= 60) {
+    if (timer.seconds === 60) {
       setTimer({ ...timer, seconds: 0, minutes: timer.minutes++ });
-    }
-
-    if (timer.minutes >= 60) {
+    } else if (timer.minutes === 60) {
       setTimer({ ...timer, minutes: 0, hours: timer.hours++ });
+    } else {
+      setTimer({ ...timer, seconds: timer.seconds++ });
     }
   }
-  let intervalID;
+
   function startTimer() {
-    intervalID = setInterval(add, 1000);
+    const intervalID = setInterval(add, 1000);
+    setID(intervalID);
   }
   return (
     <View style={{ backgroundColor: color, borderRadius: 25, marginTop: 20 }}>
@@ -47,7 +49,13 @@ export default function Activity({ color, activity, data }) {
         <View style={{ color: "#fff" }}>
           <Text>{`${timer.hours} : ${timer.minutes} : ${timer.seconds}`}</Text>
           <Button onPress={startTimer} title="Start" />
-          <Button onPress={() => clearInterval(intervalID)} title="Stop" />
+          <Button
+            onPress={() => {
+              clearInterval(ID);
+              console.log("here", ID);
+            }}
+            title="Stop"
+          />
           <Button onPress={() => console.log("a")} title="Save" />
         </View>
       )}
