@@ -12,17 +12,17 @@ export default function Activity({ color, activity, data }) {
 
   function add() {
     setTimer({ ...timer, seconds: timer.seconds++ });
-    if (timer.seconds === 60) {
-      setTimer({ ...timer, seconds: 0, minutes: minutes++ });
+    if (timer.seconds >= 60) {
+      setTimer({ ...timer, seconds: 0, minutes: timer.minutes++ });
     }
 
-    if (timer.minutes === 60) {
-      setTimer({ ...timer, minutes: 0, hours: hours++ });
+    if (timer.minutes >= 60) {
+      setTimer({ ...timer, minutes: 0, hours: timer.hours++ });
     }
   }
-
+  let intervalID;
   function startTimer() {
-    setInterval(add, 1000);
+    intervalID = setInterval(add, 1000);
   }
   return (
     <View style={{ backgroundColor: color, borderRadius: 25, marginTop: 20 }}>
@@ -47,7 +47,7 @@ export default function Activity({ color, activity, data }) {
         <View style={{ color: "#fff" }}>
           <Text>{`${timer.hours} : ${timer.minutes} : ${timer.seconds}`}</Text>
           <Button onPress={startTimer} title="Start" />
-          <Button onPress={() => console.log("a")} title="Stop" />
+          <Button onPress={() => clearInterval(intervalID)} title="Stop" />
           <Button onPress={() => console.log("a")} title="Save" />
         </View>
       )}
