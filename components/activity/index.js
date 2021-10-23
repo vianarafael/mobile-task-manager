@@ -1,8 +1,29 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function Activity({ color, activity, data }) {
   const [showTimer, setShowTimer] = React.useState(false);
+  const [timer, setTimer] = React.useState({
+    seconds: 0,
+    minutes: 0,
+    hours: 0,
+    timer: 0,
+  });
+
+  function add() {
+    setTimer({ ...timer, seconds: timer.seconds++ });
+    if (timer.seconds === 60) {
+      setTimer({ ...timer, seconds: 0, minutes: minutes++ });
+    }
+
+    if (timer.minutes === 60) {
+      setTimer({ ...timer, minutes: 0, hours: hours++ });
+    }
+  }
+
+  function startTimer() {
+    setInterval(add, 1000);
+  }
   return (
     <View style={{ backgroundColor: color, borderRadius: 25, marginTop: 20 }}>
       <View style={styles.container}>
@@ -22,7 +43,14 @@ export default function Activity({ color, activity, data }) {
           <Text style={{ color: "#fff" }}>Last Week - 10 hrs</Text>
         </View>
       </View>
-      {showTimer && <Text style={{ color: "#fff" }}>Show Me</Text>}
+      {showTimer && (
+        <View style={{ color: "#fff" }}>
+          <Text>{`${timer.hours} : ${timer.minutes} : ${timer.seconds}`}</Text>
+          <Button onPress={startTimer} title="Start" />
+          <Button onPress={() => console.log("a")} title="Stop" />
+          <Button onPress={() => console.log("a")} title="Save" />
+        </View>
+      )}
     </View>
   );
 }
