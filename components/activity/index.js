@@ -47,7 +47,9 @@ export default function Activity({ color, activity, data }) {
       </View>
       {showTimer && (
         <View style={{ color: "#fff" }}>
-          <Text>{`${timer.hours} : ${timer.minutes} : ${timer.seconds}`}</Text>
+          <Text
+            style={{ color: "#fff", textAlign: "center", padding: 6 }}
+          >{`${timer.hours} : ${timer.minutes} : ${timer.seconds}`}</Text>
           <Button onPress={startTimer} title="Start" />
           <Button
             onPress={() => {
