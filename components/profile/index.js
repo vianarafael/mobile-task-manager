@@ -1,6 +1,10 @@
 import React from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
 export default function Profile() {
+  const [details, setDetails] = React.useState({
+    display: false,
+    timePeriod: null,
+  });
   return (
     <View
       style={{
@@ -23,13 +27,36 @@ export default function Profile() {
       </View>
       <View style={{ ...padding(20), ...styles.subcontainer }}>
         <Text style={styles.text}>
-          <Text>Daily</Text>
+          <Text
+            onPress={() =>
+              setDetails({ timePeriod: "daily", display: !details.display })
+            }
+          >
+            Daily
+          </Text>
           {"         "}
-          <Text>Weekly</Text>
+          <Text
+            onPress={() =>
+              setDetails({ timePeriod: "weekly", display: !details.display })
+            }
+          >
+            Weekly
+          </Text>
           {"         "}
-          <Text>Monthly</Text>
+          <Text
+            onPress={() =>
+              setDetails({ timePeriod: "montly", display: !details.display })
+            }
+          >
+            Monthly
+          </Text>
         </Text>
       </View>
+      {details.display && (
+        <View>
+          <Text style={{ color: "#fff" }}>I am here {details.timePeriod}</Text>
+        </View>
+      )}
     </View>
   );
 }
