@@ -34,14 +34,13 @@ export default function Activity({ color, activity, data }) {
           <Text style={{ color: "#fff" }}>32 hrs</Text>
         </View>
         <View>
-          <Text
-            style={{ color: "#fff" }}
+          <Button
+            color="hsl(235, 46%, 20%)"
             onPress={() => {
               setShowTimer(!showTimer);
             }}
-          >
-            ...
-          </Text>
+            title="..."
+          />
           <Text style={{ color: "#fff" }}>Last Week - 10 hrs</Text>
         </View>
       </View>
